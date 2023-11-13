@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 5rem;
+}
+
+.details {
+  width: 28rem;
+}
+
+.details form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register a {
+  opacity: 0.8;
+  color: rgb(127, 163, 235);
+}
+
+.register a:hover {
+  opacity: 1;
+}

@@ -1,0 +1,62 @@
+.header {
+  background: rgb(30, 30, 30);
+  padding: 0;
+}
+
+.header a {
+  color: rgb(230, 240, 242);
+}
+
+.header a:hover {
+  color: rgb(127, 163, 235);
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.header ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+}
+
+.header ul a {
+  padding: 1rem;
+  display: inline-block;
+}
+
+.menu_cont {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  z-index: 1001;
+  background: rgb(50, 50, 50);
+  display: none;
+  border-radius: 1rem;
+}
+.menu_cont:hover .menu {
+  display: block;
+}
+
+.menu a {
+  width: 100%;
+  min-width: 8rem;
+}
+.cart_count {
+  background-color: rgb(127, 163, 235);
+  color: white;
+  padding: 0.1rem 0.45rem;
+  border-radius: 100rem;
+  font-size: 0.9rem;
+}
