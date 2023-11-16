@@ -6,6 +6,9 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import AuthRoute from "./components/AuthRoute/AuthRoute";
 import Checkout from "./pages/Checkout/Checkout";
+import Payment from "./pages/Payment/Payment";
+import Profile from "./pages/Profile/Profile";
+import Orders from "./pages/Orders/Orders";
 
 export default function AppRoutes() {
   return (
@@ -16,11 +19,28 @@ export default function AppRoutes() {
       <Route path="/cart" element={<Cart />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
+      <Route path="/payment" element={<Payment />}></Route>
+      <Route
+        path="/profile"
+        element={
+          <AuthRoute>
+            <Profile />
+          </AuthRoute>
+        }
+      />
       <Route
         path="/checkout"
         element={
           <AuthRoute>
             <Checkout />
+          </AuthRoute>
+        }
+      ></Route>
+      <Route
+        path="/orders/:filter?"
+        element={
+          <AuthRoute>
+            <Orders />
           </AuthRoute>
         }
       ></Route>

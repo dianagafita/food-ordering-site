@@ -10,7 +10,6 @@ import Title from "../../components/Title/Title";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import OrderItemsList from "../../components/OrderItemsList/OrderItemsList";
-import { latLng } from "leaflet";
 import Map from "../../components/Map/Map";
 
 export default function Checkout() {

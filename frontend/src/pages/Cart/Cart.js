@@ -7,7 +7,6 @@ import NotFound from "../../components/Notfound/NotFound";
 
 export default function Cart() {
   const { cart, removeFromCart, changeQuantiy } = useCart();
-
   return (
     <>
       <Title title="Cart Page" margin="1.5rem 0 0 2.5rem" />
