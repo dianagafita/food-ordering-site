@@ -41,7 +41,7 @@ export default function OrdersPage() {
           {allStatus.map((state) => (
             <Link
               key={state}
-              className={state == filter ? classes.selected : ""}
+              className={state === filter ? classes.selected : ""}
               to={`/orders/${state}`}
             >
               {state}
@@ -65,7 +65,7 @@ export default function OrdersPage() {
               <span>
                 <DateTime date={order.createdAt} />
               </span>
-              <span>{order.status}</span>
+              <span className={classes.status}>{order.status}</span>
             </div>
             <div className={classes.items}>
               {order.items.map((item) => (
@@ -75,9 +75,9 @@ export default function OrdersPage() {
               ))}
             </div>
             <div className={classes.footer}>
-              {/* <div>
+              <div>
                 <Link to={`/track/${order.id}`}>Show Order</Link>
-              </div> */}
+              </div>
               <div>
                 <span className={classes.price}>
                   <Price price={order.totalPrice} />

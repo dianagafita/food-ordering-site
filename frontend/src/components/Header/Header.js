@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import classes from "./header.module.css";
 import { useCart } from "../../hooks/useCart";
 import { useAuth } from "../../hooks/useAuth";
-
+import { BsCart3 } from "react-icons/bs";
+import { CiUser } from "react-icons/ci";
+// import { FaRegUser } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa6";
 export default function Header() {
   const { user, logout } = useAuth();
 
@@ -18,7 +22,15 @@ export default function Header() {
           <ul>
             {user ? (
               <li className={classes.menu_cont}>
-                <Link to="/profile">{user.name}</Link>
+                <Link to="/profile">
+                  <FaRegUser
+                    style={{
+                      fontSize: "0.45cm",
+                      marginRight: "10px",
+                    }}
+                  />
+                  {user.name}
+                </Link>
                 <div className={classes.menu}>
                   <Link to="/profile">Profile</Link>
                   <Link to="/orders">Orders</Link>
@@ -30,7 +42,7 @@ export default function Header() {
             )}
 
             <Link to="/cart">
-              Cart:
+              <BsCart3 />
               {cart.totalCount > 0 && (
                 <span className={classes.cart_count}>{cart.totalCount}</span>
               )}

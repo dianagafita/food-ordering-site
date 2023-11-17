@@ -56,7 +56,7 @@
   justify-content: space-between;
   border-bottom: 1px solid whitesmoke;
   border-radius: 1rem 1rem 0 0;
-  color: grey;
+  color: rgb(150, 150, 150);
 }
 
 .items {
@@ -84,6 +84,19 @@
   border-top: 1px solid whitesmoke;
   border-radius: 0 0 1rem 1rem;
 }
+.footer a {
+  color: rgb(80, 129, 227);
+  opacity: 0.7;
+}
+
+.footer a:hover {
+  opacity: 1;
+}
+
 .price {
-  color: green;
+  color: rgb(61, 155, 84);
+}
+
+.status {
+  color: rgb(30, 30, 30);
 }

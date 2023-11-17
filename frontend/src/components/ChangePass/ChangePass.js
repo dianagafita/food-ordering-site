@@ -47,7 +47,11 @@ export default function ChangePass() {
           })}
           error={errors.confirmNewPassword}
         />
-        <Button type="submit" text="Change Password" />
+        <Button
+          type="submit"
+          text="Change Password"
+          backgroundColor="rgb(127, 163, 235)"
+        />
       </form>
     </div>
   );

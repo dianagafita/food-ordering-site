@@ -43,7 +43,7 @@ export default function Food() {
             </div>
             <div className={classes.cook_time}>
               <span>
-                Time to cook about <strong>{food.cookTime}</strong> minutes!
+                Preparing time <strong>{food.cookTime}</strong> minutes!
               </span>
             </div>
             <div className={classes.price}>

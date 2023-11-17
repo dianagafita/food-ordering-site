@@ -26,7 +26,7 @@
   flex: 1 0;
   border-radius: 3rem;
   padding: 2rem;
-  color: white;
+  color: rgb(30, 30, 30);
   margin-left: 1rem;
 }
 
@@ -50,7 +50,7 @@
   padding: 0.3rem 0.9rem;
   font-size: 1.2rem;
   margin: 0.5rem 0.5rem 0.5rem 0;
-  background: rgb(50, 50, 50);
+  background: rgb(200, 200, 200);
   border-radius: 2rem;
 }
 
@@ -67,11 +67,11 @@
 .price {
   font-size: 1.8rem;
   margin: 2rem 2rem 2rem 0;
-  color: rgb(111, 239, 143);
+  color: rgb(61, 155, 84);
 }
 .price::before {
   content: "Price: ";
-  color: darkgrey;
+  color: rgb(150, 150, 150);
 }
 
 .button {

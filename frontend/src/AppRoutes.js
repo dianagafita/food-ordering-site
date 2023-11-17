@@ -9,6 +9,7 @@ import Checkout from "./pages/Checkout/Checkout";
 import Payment from "./pages/Payment/Payment";
 import Profile from "./pages/Profile/Profile";
 import Orders from "./pages/Orders/Orders";
+import OrderTrack from "./pages/OrderTrack/OrderTrack";
 
 export default function AppRoutes() {
   return (
@@ -19,7 +20,14 @@ export default function AppRoutes() {
       <Route path="/cart" element={<Cart />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
-      <Route path="/payment" element={<Payment />}></Route>
+      <Route
+        path="/payment"
+        element={
+          <AuthRoute>
+            <Payment />
+          </AuthRoute>
+        }
+      />
       <Route
         path="/profile"
         element={
@@ -36,6 +44,14 @@ export default function AppRoutes() {
           </AuthRoute>
         }
       ></Route>
+      <Route
+        path="/track/:orderId"
+        element={
+          <AuthRoute>
+            <OrderTrack />
+          </AuthRoute>
+        }
+      />
       <Route
         path="/orders/:filter?"
         element={

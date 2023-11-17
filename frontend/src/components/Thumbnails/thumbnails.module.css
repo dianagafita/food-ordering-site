@@ -10,18 +10,18 @@
 .list li a {
   height: 22.5rem;
   width: 20rem;
-  border: 0.1px solid grey;
+  border: 0.1px solid rgb(30, 30, 30);
   border-radius: 1rem;
   margin: 0.5rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  color: white;
+  color: rgb(30, 30, 30);
 }
 
 .image {
   object-fit: cover;
-  height: 14.5rem;
+  height: 13rem;
 }
 
 .content {
@@ -39,7 +39,7 @@
 
 .origins span {
   border-radius: 2rem;
-  background-color: rgb(48, 48, 48);
+  background-color: rgb(200, 200, 200);
   display: inline-block;
   font-size: 0.8rem;
   color: white;
