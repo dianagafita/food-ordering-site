@@ -27,7 +27,7 @@ function Input(
         defaultValue={defaultValue}
         className={classes.input}
         type={type}
-        placeholder={label}
+        placeholder={`Please enter ${label.toLowerCase()}`}
         ref={ref}
         name={name}
         onChange={onChange}
