@@ -12,14 +12,16 @@ router.post(
   "/create",
   handler(async (req, res) => {
     const order = req.body;
-
+    console.log("rout", order);
     if (order.items.length <= 0) res.status(BAD_REQUEST).send("Cart Is Empty!");
 
     await OrderModel.deleteOne({
       user: req.user.id,
       status: OrderStatus.NEW,
     });
+
     const newOrder = new OrderModel({ ...order, user: req.user.id });
+    console.log("new", newOrder);
     await newOrder.save();
     res.send(newOrder);
   })
@@ -60,10 +62,12 @@ router.get(
     return res.send(order);
   })
 );
+
 router.get(
   "/newOrderForCurrentUser",
   handler(async (req, res) => {
     const order = await getNewOrderForCurrentUser(req);
+    console.log("router", req.user.id);
     if (order) res.send(order);
     else res.status(BAD_REQUEST).send();
   })
@@ -84,7 +88,30 @@ router.get(
   })
 );
 
-const getNewOrderForCurrentUser = async (req) =>
-  await OrderModel.findOne({ user: req.user.id, status: OrderStatus.NEW });
+// const getNewOrderForCurrentUser = async (req) =>
+//   await OrderModel.findOne({ user: req.user.id, status: OrderStatus.NEW });
+const getNewOrderForCurrentUser = async (req) => {
+  try {
+    // console.log("User ID:", req.user.id);
+
+    // Logging the generated query
+    const query = { user: req.user.id, status: OrderStatus.NEW };
+    // console.log("Query:", query);
+
+    const order = await OrderModel.findOne(query);
+
+    if (!order) {
+      // console.log("No order found for user ID:", req.user.id);
+      return null;
+    }
+
+    // console.log("Found order:", order);
+
+    return order;
+  } catch (error) {
+    // console.error("Error fetching new order for current user:", error);
+    throw new Error("Error fetching order");
+  }
+};
 
 export default router;

@@ -3,10 +3,8 @@ import classes from "./header.module.css";
 import { useCart } from "../../hooks/useCart";
 import { useAuth } from "../../hooks/useAuth";
 import { BsCart3 } from "react-icons/bs";
-import { CiUser } from "react-icons/ci";
-// import { FaRegUser } from "react-icons/fa";
-import { FaUserCircle } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa6";
+
 export default function Header() {
   const { user, logout } = useAuth();
 

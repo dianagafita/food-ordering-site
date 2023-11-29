@@ -69,3 +69,16 @@
   font-size: 1.1rem;
   border-radius: 2rem;
 }
+
+@media screen and (max-width: 500px) {
+  .list li a {
+    width: 15rem;
+    height: 15.5rem;
+  }
+  .image {
+    height: 8rem;
+  }
+  .price {
+    font-size: 0.8rem;
+  }
+}

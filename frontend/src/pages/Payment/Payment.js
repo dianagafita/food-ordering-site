@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Payment.module.css";
 import { getNewOrderForCurrentUser } from "../../Services/orderService";
 import Title from "../../components/Title/Title";
@@ -8,10 +8,11 @@ import PaypalButtons from "../../components/PaypalButtons/PaypalButtons";
 
 export default function Payment() {
   const [order, setOrder] = useState();
+
   useEffect(() => {
     getNewOrderForCurrentUser().then((data) => setOrder(data));
   }, []);
-
+  console.log("pay", order);
   if (!order) return;
 
   return (
@@ -31,11 +32,13 @@ export default function Payment() {
           </div>
           <OrderItemsList order={order} />
         </div>
+
         <div className={classes.map}>
           <Title title="Your Location" fontSize="1.6rem" />
           <Map readonly={true} location={order.addressLatLng} />
         </div>
-        <div className={classes.button_container}>
+
+        <div className={classes.buttons_container}>
           <div className={classes.buttons}>
             <PaypalButtons order={order} />
           </div>

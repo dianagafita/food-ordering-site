@@ -45,6 +45,7 @@
   display: none;
   border-radius: 1rem;
 }
+
 .menu_cont:hover .menu {
   display: block;
 }
@@ -53,10 +54,24 @@
   width: 100%;
   min-width: 8rem;
 }
+
 .cart_count {
   background-color: rgb(127, 163, 235);
   color: white;
   padding: 0.1rem 0.45rem;
   border-radius: 100rem;
   font-size: 0.9rem;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .header {
+    width: 100%;
+  }
+  .cart_count {
+    font-size: 0.6rem;
+  }
 }

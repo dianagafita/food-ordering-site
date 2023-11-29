@@ -1,15 +1,19 @@
 import axios from "axios";
 
 export const createOrder = async (order) => {
-  try {
-    const { data } = axios.post("/api/orders/create", order);
-    return data;
-  } catch (error) {}
+  const { data } = axios.post("/api/orders/create", order);
+  console.log("order", data);
+  return data;
 };
 
 export const getNewOrderForCurrentUser = async () => {
-  const { data } = await axios.get("/api/orders/newOrderForCurrentUser");
-  return data;
+  try {
+    const { data } = await axios.get("/api/orders/newOrderForCurrentUser");
+    console.log("serv", data);
+    return data;
+  } catch (error) {
+    console.log("err", error);
+  }
 };
 
 export const pay = async (paymentId) => {

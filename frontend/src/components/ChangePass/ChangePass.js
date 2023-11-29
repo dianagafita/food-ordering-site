@@ -46,6 +46,7 @@ export default function ChangePass() {
                 : true,
           })}
           error={errors.confirmNewPassword}
+          
         />
         <Button
           type="submit"

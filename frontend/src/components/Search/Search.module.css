@@ -34,3 +34,11 @@
   opacity: 1;
   cursor: pointer;
 }
+@media screen and (max-width: 500px) {
+  .container input {
+    width: 200px;
+  }
+  .container button {
+    width: 4rem;
+  }
+}
