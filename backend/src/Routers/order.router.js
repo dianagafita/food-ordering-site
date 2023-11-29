@@ -57,7 +57,7 @@ router.get(
     }
 
     const order = await OrderModel.findOne(filter);
-
+    console.log(order);
     if (!order) return res.send(UNAUTHORIZED);
     return res.send(order);
   })
