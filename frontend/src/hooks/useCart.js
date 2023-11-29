@@ -10,7 +10,6 @@ const EMPTY_CART = {
 
 export default function CartProvider({ children }) {
   const initCart = getCartFromLocalStorage();
-
   const [cartItems, setCartItems] = useState(initCart.items);
   const [totalPrice, setTotalPrice] = useState(initCart.totalPrice);
   const [totalCount, setTotalCount] = useState(initCart.totalCount);
@@ -37,36 +36,44 @@ export default function CartProvider({ children }) {
     );
   }, [cartItems]);
 
-  const removeFromCart = (foodId) => {
+  const removeFromCart = (prodId) => {
     const filteredCartItems = cartItems.filter(
-      (item) => item.food.id !== foodId
+      (item) => item.prod.id !== prodId
     );
     setCartItems(filteredCartItems);
   };
 
   const changeQuantiy = (cartItem, newQuanity) => {
-    const { food } = cartItem;
+    const { prod } = cartItem;
 
     const changedCartItem = {
       ...cartItem,
       quantity: newQuanity,
-      price: food.price * newQuanity,
+      price: prod.price * newQuanity,
     };
 
     setCartItems(
       cartItems.map((item) =>
-        item.food.id === food.id ? changedCartItem : item
+        item.prod.id === prod.id ? changedCartItem : item
       )
     );
   };
 
-  const addToCart = (food) => {
-    const cartItem = cartItems.find((item) => item.food.id === food.id);
+  const addToCart = (prod) => {
+    const cartItem = cartItems.find((item) => item.prod.id === prod.id);
     if (cartItem) {
       changeQuantiy(cartItem, cartItem.quantity + 1);
     } else {
-      setCartItems([...cartItems, { food, quantity: 1, price: food.price }]);
+      setCartItems([...cartItems, { prod, quantity: 1, price: prod.price }]);
     }
+  };
+
+  const clearCart = () => {
+    localStorage.removeItem(CART_KEY);
+    const { items, totalPrice, totalCount } = EMPTY_CART;
+    setCartItems(items);
+    setTotalPrice(totalPrice);
+    setTotalCount(totalCount);
   };
 
   return (
@@ -76,6 +83,7 @@ export default function CartProvider({ children }) {
         removeFromCart,
         changeQuantiy,
         addToCart,
+        clearCart,
       }}
     >
       {children}

@@ -10,7 +10,8 @@
   border: none;
   height: 3rem;
   width: 20rem;
-  background: grey;
+  background: rgb(50, 50, 50);
+  color: white;
   padding: 1.2rem;
   font-size: 1rem;
   font-weight: 200;
@@ -32,4 +33,12 @@
 .container button:hover {
   opacity: 1;
   cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  .container input {
+    width: 200px;
+  }
+  .container button {
+    width: 4rem;
+  }
 }

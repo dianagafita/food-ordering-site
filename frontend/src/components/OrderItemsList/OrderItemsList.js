@@ -12,17 +12,17 @@ export default function OrderItemsList({ order }) {
           </td>
         </tr>
         {order.items.map((item) => (
-          <tr key={item.food.id}>
+          <tr key={item.prod.id}>
             <td>
-              <Link to={`/food${item.food.id}`}>
-                <img src={item.food.imageUrl} />
+              <Link to={`/food${item.prod.id}`}>
+                <img src={item.prod.imageUrl} />
               </Link>
             </td>
-            <td>{item.food.name}</td>
+            <td>{item.prod.name}</td>
             <td>
-              <Price price={item.food.price} />
+              <Price price={item.prod.price} />
             </td>
-            <td>{item.food.quantity}</td>
+            <td>{item.prod.quantity}</td>
             <td>
               <Price price={item.price} />
             </td>
