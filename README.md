@@ -11,14 +11,19 @@ CSS Styling
 
 Pages & Routing
 
-Data Fetching Methods - getServerSideProps, getStaticProps, getStaticPaths
+Working with mongoose, express routers
 
 Custom API Routes
+
 ```
 ## I worked with:
 
 ``` text
-MongoDB Atlas for the backend
-Deploying to Vercel
+MongoDB  for the backend
+Express.js
+React
+Node.js
+Deploying to Render
+
 ```
 
