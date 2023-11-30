@@ -11,9 +11,10 @@ CSS Styling
 
 Pages & Routing
 
-Working with mongoose, express routers
+Working with mongoose
 
-Custom API Routes
+Express routers
+
 
 ```
 ## I worked with:
