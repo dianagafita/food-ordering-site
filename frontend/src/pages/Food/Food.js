@@ -42,16 +42,16 @@ export default function Food() {
               ))}
             </div>
             <div className={classes.cook_time}>
-              <span>
-                Preparing time <strong>{food.cookTime}</strong> minutes!
-              </span>
+              <span>Preparing time {food.cookTime} min.</span>
             </div>
-            <div className={classes.price}>
-              <Price price={food.price} />
+            <div className={classes.bottom}>
+              <div className={classes.price}>
+                <Price price={food.price} />
+              </div>
+              <button className={classes.button} onClick={handleAddTooCart}>
+                Add To Cart
+              </button>
             </div>
-            <button className={classes.button} onClick={handleAddTooCart}>
-              Add To Cart
-            </button>
           </div>
         </div>
       )}
