@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  flex: wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 3rem;
@@ -98,34 +98,48 @@
   }
 
   .container > * {
-    min-width: 5rem;
-    max-width: 10rem;
+    min-width: 15rem;
+    max-width: 100%;
   }
 
   .image {
     object-fit: cover;
-    height: 10rem;
-    width: 10rem;
+    height: 14rem;
+    max-width: 100%;
+  }
+
+  .button {
+    width: 190px;
+    height: 60px;
+    border-radius: 2rem;
+    margin-top: 2rem;
+  }
+
+  .price {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .bottom {
+    margin-right: -2.5rem;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-end;
   }
 
   .details {
-    margin-left: 1rem;
+    padding: 0rem 1rem;
+    margin-right: 4rem;
   }
 
-  .name {
-    font-size: 1.5rem;
-  }
-  .button {
-    width: 150px;
-  }
-  .price {
-    font-size: 1.5rem;
-  }
   .origins span {
+    margin-top: auto;
     font-size: 0.8rem;
   }
 
   .cook_time span {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }

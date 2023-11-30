@@ -39,6 +39,7 @@
     width: 200px;
   }
   .container button {
-    width: 4rem;
+    width: fit-content;
+    padding: 1rem;
   }
 }
